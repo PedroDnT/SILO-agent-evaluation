@@ -2,7 +2,7 @@
 
 ## Goal
 
-Evaluate whether a research agent can answer public Brazilian-market questions with traceable evidence, correct calculations, and explicit limits. The evaluation harness reads through SILO's public API and MCP only. It does not connect to a database or use private data.
+Evaluate whether a research agent can answer public Brazilian-market questions with traceable evidence, correct calculations, and explicit limits. The evaluation harness reads only public SILO data through the API. It does not connect to a database or use private data. The current runner uses the SILO SDK/API and does not invoke `silo-mcp`; **TODO Peu:** confirm whether the separate harness should be updated to call the read-only MCP server as well.
 
 ## The 12 cases
 
@@ -42,7 +42,7 @@ Before a paid run, create a fresh, passing, read-only API preflight report for t
 python research_examples/agent_eval.py --run --preflight-report PATH --budget-usd 20
 ```
 
-The runner uses the API client and its MCP tool adapter, has a maximum of five substantive data calls per case, and requires a passing live preflight for the relevant research RPCs before paid requests. It reads `SILO_URL`, `SILO_ANON_KEY`, and `OPENAI_API_KEY` from the environment (or the ignored `.env` for the OpenAI key). Never commit credentials.
+The current runner uses the API client, has a maximum of five substantive data calls per case, and requires a passing live preflight for the relevant research RPCs before paid requests. It reads `SILO_URL`, `SILO_ANON_KEY`, and `OPENAI_API_KEY` from the environment (or the ignored `.env` for the OpenAI key). Never commit credentials.
 
 ## Spend cap (US$20)
 
