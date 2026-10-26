@@ -2,7 +2,7 @@
 
 ## Goal
 
-Evaluate whether a research agent can answer public Brazilian-market questions with traceable evidence, correct calculations, and explicit limits. The evaluation harness reads only public SILO data through the API. It does not connect to a database or use private data. The current runner uses the SILO SDK/API and does not invoke `silo-mcp`; **TODO Peu:** confirm whether the separate harness should be updated to call the read-only MCP server as well.
+Evaluate whether a research agent can answer public Brazilian-market questions with traceable evidence, correct calculations, and explicit limits. The evaluation harness reads only public SILO data through the API. It does not connect to a database or use private data. The current runner uses the SILO SDK/API and does not invoke `silo-mcp`.
 
 ## The 12 cases
 
